@@ -12,6 +12,7 @@ const Header = props =>
         <NavLink to="/Home" className="headerButton">Home</NavLink>
         <NavLink to="/Store" className="headerButton">Store</NavLink>
         <NavLink to="/About" className="headerButton">About</NavLink>
+        <NavLink to="/Contact" className="headerButton">Contact Us</NavLink>
         {/* <button className="headerButton">Store</button>
         <button className="headerButton">About</button> */}
         <button onClick={props.onShowCart} className="cartButton">Cart 

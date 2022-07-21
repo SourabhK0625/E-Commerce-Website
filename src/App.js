@@ -7,6 +7,7 @@ import ProductDetail from "./components/Pages/ProductDetail";
 import React, { useState } from "react";
 import { Route,Switch } from "react-router-dom";
 import CartProvider from "./components/Cart/CartProvider";
+import Contact from "./components/Pages/Contact";
 import Home from "./components/Pages/Home";
 import About from "./components/Pages/About";
 
@@ -58,7 +59,7 @@ function App() {
       <PageSummary />
       <Switch>
         <Route path="/Home">
-        <Home></Home>
+          <Home></Home>
         </Route>
         <Route path="/About">
           <About></About>
@@ -72,6 +73,9 @@ function App() {
           <ProductDetail product={product}/>
         </Route>
       </Switch>
+      <Route path="/Contact">
+          <Contact />
+        </Route>
       <Footer />  
     </CartProvider>
   );
