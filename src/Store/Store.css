@@ -1,0 +1,46 @@
+.unOrderedList{
+    text-align: center;
+    margin-right: 250px; 
+    margin-left: 250px; 
+    
+}
+.mainList {
+    border: 3px solid white;
+    padding: 10px;
+    width: 50%;
+    float: left;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.itemTitle{
+    list-style-type: none;
+}
+.itemMusic{
+    text-align: center;
+    font-size: 60px;
+    padding-top: 20px;
+    font-weight:lighter;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.itemTitle{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+.itemPrice{
+  
+    font-size: 20px;
+    float: left;
+    margin-left: 100px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+.itemImage{
+    border-radius: 10px;
+    box-shadow: 0 0 20px 2px rgba(140, 10, 10, 0.1);
+    transition: 0.5s;
+}
+
+.itemImage:hover{
+    transform: scale(1.1);
+}
