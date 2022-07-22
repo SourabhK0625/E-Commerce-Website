@@ -4,14 +4,17 @@ import Store from "./Store/Store";
 import Footer from "./components/Layout/Footer";
 import Cart from "./components/Cart/Cart";
 import ProductDetail from "./components/Pages/ProductDetail";
-import React, { useState } from "react";
-import { Route,Switch } from "react-router-dom";
+import React, { useState,useContext } from "react";
+import { Route,Switch ,Redirect } from "react-router-dom";
 import CartProvider from "./components/Cart/CartProvider";
 import Contact from "./components/Pages/Contact";
 import Home from "./components/Pages/Home";
+import AuthForm from "./components/Pages/AuthForm";
 import About from "./components/Pages/About";
+import CartContext from "./components/Cart/CartContext";
 
 function App() {
+  const crtctx = useContext(CartContext);
 
   const [cartIsShown , setCartIsShown] = useState(false);
   const [product , setProduct] = useState({});
@@ -63,6 +66,9 @@ function App() {
         </Route>
         <Route path="/About">
           <About></About>
+        </Route>
+        <Route path="/Login">
+          <AuthForm />
         </Route>
         <Route path="/Store" exact>
           {cartIsShown && <Cart onClose={hideCartHandler} />}
