@@ -10,10 +10,10 @@ const Header = props =>
     <div className="headerNav">
         
         <NavLink to="/About" className="headerButton">About</NavLink>
-        <NavLink to="/Login" className="headerButton">Login</NavLink>
         <NavLink to="/Home" className="headerButton">Home</NavLink>
         <NavLink to="/Store" className="headerButton">Store</NavLink>
         <NavLink to="/Contact" className="headerButton">Contact Us</NavLink>
+        <NavLink to="/Login" className="headerButton">Login</NavLink>
         <button onClick={props.onShowCart} className="cartButton">Cart 
         <div className="cartCount"> {crtCtx.items.reduce((accumulator, curItem)=>{return accumulator + curItem.quantity},0)}</div></button>
     </div>)

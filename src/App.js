@@ -61,26 +61,33 @@ function App() {
       <Header onShowCart={showCartHandler} />
       <PageSummary />
       <Switch>
-        <Route path="/Home">
+       <Route path="/Home">
           <Home></Home>
         </Route>
+
         <Route path="/About">
           <About></About>
         </Route>
-        <Route path="/Login">
-          <AuthForm />
-        </Route>
-        <Route path="/Store" exact>
-          {cartIsShown && <Cart onClose={hideCartHandler} />}
+        {crtctx.isLoggedIn && (<Route path="/Store" exact>
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+         
           <Store prodList={productsArr} productDetail={productDetail}/>
-        </Route>
-        <Route path='/Store/:product'>
+          
+        </Route>)}
+        {!crtctx.isLoggedIn && <Redirect to='/Login' />}
+
+
+        {crtctx.isLoggedIn &&<Route path='/Store/:product'>
         {cartIsShown && <Cart onClose={hideCartHandler} />}
           <ProductDetail product={product}/>
-        </Route>
+        </Route>}
       </Switch>
       <Route path="/Contact">
           <Contact />
+        </Route>
+
+        <Route path="/Login">
+          <AuthForm />
         </Route>
       <Footer />  
     </CartProvider>
