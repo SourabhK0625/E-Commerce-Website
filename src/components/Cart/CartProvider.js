@@ -117,6 +117,10 @@ const CartProvider = (props) => {
     }
     setIsItems([...isItems]);
   };
+  const purchaseItemHandler =()=>
+  {
+    setIsItems([]);
+  }
   const cartContext = {
     items: isItems,
     totalAMount: 0,
@@ -126,6 +130,7 @@ const CartProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     addToken: addTokenHandler,
     removeToken: removeTokenHandler,
+    purchaseItems: purchaseItemHandler
   };
   return (
     <CartContext.Provider value={cartContext}>
