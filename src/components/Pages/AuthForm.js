@@ -65,8 +65,8 @@ const AuthForm = () => {
       .then((data) => {
         console.log(data);
         crtctx.addToken({token: data.idToken});
-        
-        localStorage.setItem('emailLoggedIn',enteredEmail)
+        localStorage.setItem('emailLoggedIn',enteredEmail.replace("@", "")
+        .replace(".", ""));
         localStorage.setItem('loginToken',data.idToken)
         history.replace('/Store')
       })

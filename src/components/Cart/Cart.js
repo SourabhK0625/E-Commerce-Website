@@ -25,8 +25,6 @@ import CartContext from "./CartContext";
 //             quantity: 1,
 //         }
 //     ]
-
-
 const Cart = props =>
 {   
     const crtCtx = useContext(CartContext);
@@ -73,8 +71,8 @@ const Cart = props =>
                 <p className="para">Quantity</p>
             </div>
             {cartItems}
-            <div className="total">Total Amount = {crtCtx.items.reduce((accumulator, curItem)=>{return accumulator + (curItem.quantity*curItem.price)},0)}</div>
-            <button onClick={crtCtx.purchaseItems}>Purchase</button>
+            <div className="total">Total Amount = {crtCtx.items.reduce((accumulator, curItem)=>{return accumulator + (curItem.quantity*curItem.price)},0)}</div><br></br>
+            <button className="purchase" onClick={crtCtx.purchaseItems}>Purchase</button>
         </Card>
     );
 };

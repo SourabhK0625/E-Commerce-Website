@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import CartContext from "./CartContext";
 const emailLoggedIn = localStorage
   .getItem("emailLoggedIn")
-  .replace("@", "")
-  .replace(".", "");
+  // .replace("@", "")
+  // .replace(".", "");
 const CartProvider = (props) => {
   let [isItems, setIsItems] = useState([]);
   const initialToken = localStorage.getItem("token");
