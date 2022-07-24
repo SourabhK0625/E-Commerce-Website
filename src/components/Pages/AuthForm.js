@@ -35,7 +35,8 @@ const AuthForm = () => {
       url =
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC8PBwyCtCdMh2P_NhHsVvZULyI-4KNNEQ';
     }
-    fetch(url, {
+    fetch(url, 
+      {
       method: 'POST',
       body: JSON.stringify({
         email: enteredEmail,
@@ -62,8 +63,11 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        // console.log(data.idToken);
+        console.log(data);
         crtctx.addToken({token: data.idToken});
+        
+        localStorage.setItem('emailLoggedIn',enteredEmail)
+        localStorage.setItem('loginToken',data.idToken)
         history.replace('/Store')
       })
       .catch((err) => {

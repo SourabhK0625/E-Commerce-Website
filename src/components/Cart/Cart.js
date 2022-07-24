@@ -74,7 +74,7 @@ const Cart = props =>
             </div>
             {cartItems}
             <div className="total">Total Amount = {crtCtx.items.reduce((accumulator, curItem)=>{return accumulator + (curItem.quantity*curItem.price)},0)}</div>
-            
+            <button>Purchase</button>
         </Card>
     );
 };
