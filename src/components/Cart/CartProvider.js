@@ -1,10 +1,11 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { useState, useEffect } from "react";
 import CartContext from "./CartContext";
-const emailLoggedIn = localStorage
-  .getItem("emailLoggedIn")
-  // .replace("@", "")
-  // .replace(".", "");
-const CartProvider = (props) => {
+
+
+function CartProvider(props) {
+  const emailLoggedIn = localStorage.getItem("emailLoggedIn");
   let [isItems, setIsItems] = useState([]);
   const initialToken = localStorage.getItem("token");
   let [isToken, setIsToken] = useState(initialToken);
@@ -117,10 +118,9 @@ const CartProvider = (props) => {
     }
     setIsItems([...isItems]);
   };
-  const purchaseItemHandler =()=>
-  {
+  const purchaseItemHandler = () => {
     setIsItems([]);
-  }
+  };
   const cartContext = {
     items: isItems,
     totalAMount: 0,
@@ -130,13 +130,13 @@ const CartProvider = (props) => {
     isLoggedIn: userIsLoggedIn,
     addToken: addTokenHandler,
     removeToken: removeTokenHandler,
-    purchaseItems: purchaseItemHandler
+    purchaseItems: purchaseItemHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
       {props.children}
     </CartContext.Provider>
   );
-};
+}
 
 export default CartProvider;

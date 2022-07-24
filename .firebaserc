@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "swapi-366f3"
-  }
+    "default": "swapi-366f3",
+    "staging": "swapi-366f3"
+  },
+  "targets": {},
+  "etags": {}
 }

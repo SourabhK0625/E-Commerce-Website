@@ -1,6 +1,10 @@
+import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import playButton from "../../Assets/Play_Button.png"
+
+
+
 const Home = (props) => {
   const tours = [
     { date: "JUL 16", place: "DETROIT, MI", concert: "DTE ENERGY MUSIC " },
@@ -11,7 +15,8 @@ const Home = (props) => {
     { date: "AUG 07", place: "CONCORD, CA", concert: "CONCORD PAVILION" },
   ];
 
-  const tourList = (
+  const tourList = 
+  (
     <ul className="mainList" style={{ marginLeft: "25%" }}>
       {tours.map((item) => (
         <li key={Math.random().toString()}
